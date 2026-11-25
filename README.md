@@ -6,7 +6,8 @@ Aplicação web desenvolvida em **Next.js + TypeScript + Prisma (SQLite)** para 
 
 ## Principais Funcionalidades
 
-- **Resumo Geral da Edição:** painel no topo do site com síntese automática do que foi publicado no dia (modo determinístico offline + suporte opcional a IA via `GEMINI_API_KEY`) e botão **Copiar Resumo (WhatsApp)**.
+- **Navegador de Pesquisa Principal (Hero Omnibox) + Radar de Hoje:** barra de pesquisa em destaque no topo da página inicial (`/`) com chips rápidos (*Nomeações*, *Exonerações*, *Licitações e Pregões*, *Contratos e Aditivos*, *Créditos Suplementares* e *Edições Extras*). Sem busca ativa, exibe logo abaixo o **Radar de Hoje** (resumo completo da edição do dia); ao pesquisar, substitui o Radar pelos resultados unificados do Banco Local e do Portal Oficial (2015–2026).
+- **Resumo Geral da Edição:** síntese automática do que foi publicado no dia (modo determinístico offline + suporte opcional a IA via `GEMINI_API_KEY`) e botão **Copiar Resumo (WhatsApp)**.
 - **Classificação Automática nas Categorias Prioritárias:**
   - **Leis e Atos Normativos:** leis municipais/complementares, decretos (com destaque para créditos suplementares e valores), resoluções, instruções normativas e portarias normativas.
   - **Atos de Pessoal:** nomeações, exonerações, designações, aposentadorias e licenças, com contadores e tabela estruturada.

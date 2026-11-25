@@ -10,7 +10,8 @@ Aplicação web que coleta, classifica e resume automaticamente as edições do 
   - **Leis e Atos Normativos** (leis, decretos, resoluções, instruções normativas, portarias normativas)
   - **Atos de Pessoal** (com contagem de nomeações/exonerações e tabela estruturada)
   - **Contratos, Editais e Avisos** (licitações, extratos, dispensas, notificações e links de anexos PDF externos)
-- **Resumo Geral da Edição** exibido diretamente no topo do site (modo determinístico offline + suporte opcional a IA via `GEMINI_API_KEY`) com botão **Copiar Resumo (WhatsApp)**.
+- **Navegador de Pesquisa Principal (Hero Omnibox) + Radar de Hoje:** barra de busca no topo da página inicial (`/`) com atalhos de 1 clique (*Nomeações*, *Exonerações*, *Licitações e Pregões*, *Contratos*, *Créditos Suplementares* e *Edições Extras*). Exibe o **Radar de Hoje** por padrão e alterna dinamicamente para os resultados unificados (Banco Local + Portal Oficial 2015–2026 com importação em 1 clique) quando o usuário pesquisa.
+- **Resumo Geral da Edição** exibido diretamente no Radar de Hoje (modo determinístico offline + suporte opcional a IA via `GEMINI_API_KEY`) com botão **Copiar Resumo (WhatsApp)**.
 - **Rotas permanentes (`/edicoes/[id]`), Histórico & Logs de Sincronização (`/historico`) e Busca Global (`/busca`)**.
 
 ## Como executar localmente

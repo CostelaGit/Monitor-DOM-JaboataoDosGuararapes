@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Newspaper, History, Search, ExternalLink } from "lucide-react";
+import { Compass, Newspaper, History, Search, ExternalLink } from "lucide-react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Monitor DOM — Diário Oficial de Jaboatão dos Guararapes",
+  title: "Monitor DOM — Navegador do Diário Oficial de Jaboatão dos Guararapes",
   description:
-    "Resumo automatizado das principais informações do Diário Oficial do Município de Jaboatão dos Guararapes: Leis, Atos de Pessoal, Contratos, Editais e Edições Extras.",
+    "Navegador inteligente e resumo automatizado do Diário Oficial do Município de Jaboatão dos Guararapes: pesquise atos, leis, nomeações, contratos, editais e edições extras (2015–2026).",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
                     Monitor DOM Jaboatão
                   </span>
                   <span className="hidden rounded-full bg-white/15 px-2 py-0.5 text-[11px] font-medium text-yellow-200 sm:inline">
-                    Resumo Inteligente
+                    Navegador &amp; Radar
                   </span>
                 </div>
                 <p className="text-xs text-blue-100">
@@ -43,15 +43,15 @@ export default function RootLayout({
                 href="/"
                 className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-white/90 transition hover:bg-white/15 hover:text-white"
               >
-                <Newspaper className="h-4 w-4" />
-                <span>Resumo</span>
+                <Compass className="h-4 w-4" />
+                <span>Pesquisa &amp; Radar</span>
               </Link>
               <Link
                 href="/historico"
                 className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-white/90 transition hover:bg-white/15 hover:text-white"
               >
                 <History className="h-4 w-4" />
-                <span>Histórico & Extras</span>
+                <span>Histórico &amp; Extras</span>
               </Link>
               <Link
                 href="/busca"
