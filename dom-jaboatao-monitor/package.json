@@ -8,6 +8,7 @@
                     "build":  "next build",
                     "start":  "next start",
                     "sync":  "tsx scripts/sync-cli.ts",
+                    "db:setup":  "node -e \"const fs=require('fs');if(!fs.existsSync('.env')&&fs.existsSync('.env.example'))fs.copyFileSync('.env.example','.env');\" && prisma generate && prisma db push",
                     "db:push":  "prisma db push",
                     "db:generate":  "prisma generate",
                     "typecheck":  "tsc --noEmit",

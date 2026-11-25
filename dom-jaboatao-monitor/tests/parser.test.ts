@@ -14,6 +14,10 @@ import {
 import { parseEditionHtml } from "../src/lib/scraper/editionParser";
 import { classifyAct } from "../src/lib/classifier/rules";
 import { buildDeterministicSummary } from "../src/lib/summarizer/deterministic";
+import {
+  DEFAULT_LOCAL_DATABASE_URL,
+  ensureLocalDatabaseUrl,
+} from "../src/lib/db";
 
 const fixturesDir = path.join(process.cwd(), "tests", "fixtures");
 
@@ -193,5 +197,25 @@ describe("editionParser & summarizer — fixtures HTML reais", () => {
 
     const summary = buildDeterministicSummary(parsed);
     assert.match(summary.executiveSummary[0], /Edição Extraordinária/i);
+  });
+});
+
+describe("db — fallback seguro de DATABASE_URL no ambiente local", () => {
+  it("define DATABASE_URL com o padrão file:./dev.db quando não definida no ambiente", () => {
+    const mockEnv: NodeJS.ProcessEnv = { NODE_ENV: "test" };
+    const resolved = ensureLocalDatabaseUrl(mockEnv);
+    assert.equal(resolved, DEFAULT_LOCAL_DATABASE_URL);
+    assert.equal(mockEnv.DATABASE_URL, "file:./dev.db");
+  });
+
+  it("preserva DATABASE_URL explícita quando já configurada no ambiente", () => {
+    const customUrl = "file:./custom.db";
+    const mockEnv: NodeJS.ProcessEnv = {
+      NODE_ENV: "test",
+      DATABASE_URL: customUrl,
+    };
+    const resolved = ensureLocalDatabaseUrl(mockEnv);
+    assert.equal(resolved, customUrl);
+    assert.equal(mockEnv.DATABASE_URL, customUrl);
   });
 });

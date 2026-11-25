@@ -18,8 +18,10 @@ Aplicação web que coleta, classifica e resume automaticamente as edições do 
 ```powershell
 cd dom-jaboatao-monitor
 npm install
+copy .env.example .env
 npx prisma generate
 npx prisma db push
+# (ou simplesmente: npm run db:setup)
 npm run sync
 npm run dev
 ```
@@ -33,6 +35,7 @@ Acesse `http://localhost:3000`.
 - `npm run start` — executa o servidor em produção
 - `npm test` — executa os testes automatizados de regressão com fixtures HTML reais
 - `npm run sync` — sincroniza novas edições do DOM via terminal (`--pages=3 --limit=26 --force`)
+- `npm run db:setup` — cria `.env` (se ausente), gera o Prisma Client e inicializa o banco SQLite
 - `npm run db:push` — aplica alterações do schema Prisma no banco
 
 ## Automação da coleta (08h, 12h, 16h e 20h)
